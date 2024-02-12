@@ -7,6 +7,7 @@ import java.util.Scanner;
 
 public class GradeConverter {
 
+	// Caclulate grade from score
 	public String calcGrade(int score)
 	{
 		String grade = "";
@@ -35,6 +36,7 @@ public class GradeConverter {
 		return grade;
 	}
 	
+	// Continue running program?
 	public String continueYesNo()
 	{
 		Scanner contOBJ = new Scanner(System.in);
@@ -42,6 +44,7 @@ public class GradeConverter {
 		return contOBJ.nextLine();		
 	}
 	
+	// Get score
 	public int getScore()
 	{
 		Scanner gradeOBJ = new Scanner(System.in);
@@ -49,6 +52,7 @@ public class GradeConverter {
 		return gradeOBJ.nextInt();		
 	}
 	
+	//----------------------------------------------------------------
 	public static void main(String[] args) 
 	{
 		String cont = "Y";
@@ -56,21 +60,21 @@ public class GradeConverter {
 		int score = 0;
 		
 		// Execute while Continue = Yes
-		while(cont.toUpperCase() == "Y")
+		while(cont.toUpperCase() != "N")
 		{
-			GradeConverter gc = new GradeConverter();	
+			GradeConverter gc = new GradeConverter();
+			
 			score = gc.getScore();
 			grade = gc.calcGrade(score);
 					
-			System.out.println("Score: "+ score);
 			System.out.println("Letter grade: "+grade);
 			
+			// continue?
 			cont = gc.continueYesNo();
-			System.out.println("Continue = "+cont);
+			System.out.println("Continue = "+cont.toUpperCase());
 		}
 	
 		System.out.println("\nBYE!!!");
-
 	}
 
 }
