@@ -47,7 +47,7 @@ public class GradeConverter {
 			cont = gc.continueYesNo();
 		}
 	
-		System.out.println("\n BYE!!!");
+		System.out.println("\nBYE!!!");
 
 	}
 
