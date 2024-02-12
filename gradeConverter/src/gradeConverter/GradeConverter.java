@@ -7,27 +7,47 @@ import java.util.Scanner;
 
 public class GradeConverter {
 
+	public String continueYesNo()
+	{
+		Scanner contOBJ = new Scanner(System.in);
+		System.out.println("Continue? (y/n): ");
+		return contOBJ.nextLine();		
+	}
+	
+public int getScore()
+	{
+		Scanner gradeOBJ = new Scanner(System.in);
+		System.out.println("Enter numerical grade: ");
+		return gradeOBJ.nextInt();		
+	}
+	
 	public static void main(String[] args) 
 	{
 		String cont = "Y";
 		String grade = "";
 		int score = 0;
 		
-		while(cont == "Y" || cont == "y")
+		while(cont != "N" || cont != "n")
 		{
-			Scanner gradeOBJ = new Scanner(System.in);
-			System.out.println("Enter numerical grade: ");
-			score = gradeOBJ.nextInt();
-			
-			if (score > 89 && score < 100)
+			GradeConverter gc = new GradeConverter();	
+			score = gc.getScore();
+						
+			if (score >= 90 && score <= 100)
 			{
 				grade = "A";
 				break;
 			}
 			else
 			{
+				if(score > 80 && score < 90 )
+				{
+					grade = "B";
+					break;
+				}
 			}
-			}
+			
+			System.out.println("Letter Grade: "+ grade);
+			cont = gc.continueYesNo();
 		}
 
 	}
