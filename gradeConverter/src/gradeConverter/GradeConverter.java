@@ -27,28 +27,27 @@ public class GradeConverter {
 		String grade = "";
 		int score = 0;
 		
-		while(cont != "N" || cont != "n")
+		while(cont == "Y" || cont == "y")
 		{
 			GradeConverter gc = new GradeConverter();	
 			score = gc.getScore();
 						
-			if (score >= 90 && score <= 100)
-			{
-				grade = "A";
-				break;
-			}
-			else
-			{
-				if(score > 80 && score < 90 )
-				{
-					grade = "B";
-					break;
-				}
-			}
+			//if (score >= 90 && score <= 100)
+			//{
+			//	grade = "A";
+			//	break;
+			//}
+		//	else
+		//	{
+			//	grade = "next";
+			//	break;
+			//}
 			
-			System.out.println("Letter Grade: "+ grade);
+			System.out.println("Score: "+ score);
 			cont = gc.continueYesNo();
 		}
+	
+		System.out.println("\n BYE!!!");
 
 	}
 
