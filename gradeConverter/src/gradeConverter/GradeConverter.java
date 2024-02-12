@@ -14,7 +14,7 @@ public class GradeConverter {
 		return contOBJ.nextLine();		
 	}
 	
-public int getScore()
+	public int getScore()
 	{
 		Scanner gradeOBJ = new Scanner(System.in);
 		System.out.println("Enter numerical grade: ");
